@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>presentation</title>
+
+    <link rel="stylesheet" href="plugin/reset.css" />
+    <link rel="stylesheet" href="plugin/reveal.css" />
+    <link rel="stylesheet" href="plugin/theme/black.css" />
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>What is HTML 5 Canvas?</section>
+        <section>
+          Creating a HTML canvas element
+          <pre>
+                <code class="language-html">   <canvas id="drawing" width="400" height="300"></canvas>   </code>
+            </pre>
+        </section>
+        <section><img src="./img/1.png" alt="1S" /></section>
+        <section>
+          Using the "context"
+          <pre>
+        <code class="language-js">   
+        let drawing = document.getElementById("drawing");
+        let c = drawing.getContext("2d");
+
+        c.fillStyle="hotpink";
+        c.strokeStyle="#000";
+        c.lineWidth=2;
+        </code>
+              </pre>
+        </section>
+        <section>
+          <img src="./img/2.png" alt="" />
+          <pre>
+            <code class="language-js">   
+                c.rect(50, 50, 300, 200);
+                c.fill();
+                c.stroke();
+            </code>
+        </pre>
+        </section>
+
+        <section>
+          <section>
+            Understanding the "path"
+            <pre>
+            <code class="language-js">   
+                c.fillStyle="hotpink";
+                c.strokeStyle="#000";
+                c.lineWidth=2;
+                
+                c.rect(50, 50, 100, 200);
+                c.fill();
+                c.stroke();
+                
+                c.fillStyle="#7DF9FF";
+                c.rect(250, 50, 100, 200);
+                c.fill();
+                c.stroke();
+            </code>
+          </pre>
+          </section>
+          <section><img src="./img/3.png" alt="" /></section>
+          <section>
+            <pre>
+            <code class="language-js">   
+                c.beginPath();
+                c.fillStyle="hotpink";
+                c.strokeStyle="#000";
+                c.lineWidth=2;
+                c.rect(50, 50, 100, 200);
+                c.fill();
+                c.stroke();
+                c.closePath();
+            </code>
+          </pre>
+          </section>
+          <section>
+            <pre>
+            <code class="language-js">   
+                c.beginPath();
+                c.fillStyle="#7DF9FF";
+                c.strokeStyle="#000";
+                c.lineWidth=2;
+                c.rect(250, 50, 100, 200);
+                c.fill();
+                c.stroke();
+                c.closePath();
+            </code>
+          </pre>
+          </section>
+          <section><img src="./img/4.png" alt="" /></section>
+        </section>
+        <section>
+          <section>Drawing custom shapes on the canvas</section>
+          <section>
+            <pre>
+            <code class="language-js">   
+                c.beginPath();
+                c.fillStyle="hotpink";
+                c.strokeStyle="#000";
+                c.lineWidth=2;
+                c.moveTo(200, 50);
+                c.lineTo(50, 200);
+                c.lineTo(350, 200);
+                c.lineTo(200, 50);
+                c.fill();
+                c.stroke();
+                c.closePath();
+            </code>
+          </pre>
+          </section>
+          <section><img src="./img/5.png" alt="" /></section>
+        </section>
+        <section>
+          <section>The "width" and "height" properties</section>
+          <section>
+            <pre>
+                <code class="language-html">   <canvas id="drawing" width="200" height="150"></canvas>
+                  </code>
+              </pre>
+          </section>
+          <section><img src="./img/7png" alt="" /></section>
+        </section>
+      </div>
+    </div>
+
+    <script src="plugin/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
